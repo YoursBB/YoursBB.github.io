@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+				div.sticky {
+			width: 100%;
+			box-sizing: border-box;
+			top: 0;
+			left: 0;
+			background-color: #cae8ca;
+			border: 2px solid #4CAF50;
+		}
+		
+	</style>
+	<body>
+		<p>尝试滚动页面。</p>
+		<p>注意: IE/Edge 15 及更早 IE 版本不支持 sticky 属性。</p>
+		<p>尝试滚动页面。</p>
+		<p>尝试滚动页面。</p>
+		<p>尝试滚动页面。</p>
+		<p>尝试滚动页面。</p>
+		<p>尝试滚动页面。</p>
+		<p>尝试滚动页面。</p>
+		<p>尝试滚动页面。</p>
+		<p>尝试滚动页面。</p>
+
+		<div class="sticky">我是粘性定位!</div>
+			<div style="padding-bottom:2000px">
+			<p>滚动我</p>
+			<p>来回滚动我</p>
+			<p>滚动我</p>
+			<p>来回滚动我</p>
+			<p>滚动我</p>
+			<p>来回滚动我</p>
+		</div>
+		<script>
+						var box=document.querySelector('div.sticky');
+			var boxY=box.offsetTop;
+			document.body.onscroll=function(){
+				if(window.pageYOffset>boxY){
+					box.style.position='fixed';
+				}
+				else{
+					box.style.position='relative';
+				}
+			}
+		</script>
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />s <br />
+		s <br />s <br />s <br />s <br />
+	</body>
+</html>

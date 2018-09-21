@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery文件/jquery.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div class="button">
+        <span>love<i></i></span>
+
+    </div>
+    <style>
+        .button {
+            position: relative;
+            margin: 0 auto;
+            width: 200px;
+            height: 50px;
+            background: lightblue;
+            display: inline-block;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 10px
+        }
+
+        span {
+            text-align: center;
+            line-height: 50px;
+            display: block;
+            color: red;
+
+        }
+
+        span i {
+            display: block;
+            content: '';
+            background: pink;
+            width: 100px;
+            height: 100px;
+            transform: scale(0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 50%;
+            transition: all .5s;
+        }
+
+        span i.active {
+            transform: scale(6);
+        }
+    </style>
+    <script>
+        $('span').hover(function (ev) {
+            $('span i').css({
+                top: (ev.clientY - $('span').offset().top - 50),
+                left: (ev.clientX - $('span').offset().left - 50)
+            })
+            $('span i').addClass('active');
+        }, function () {
+            $('span i').removeClass('active');
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td /* table elements 表格元素 */ {
+      margin: 0;
+      padding: 0;
+    }
+ul, ol { list-style: none; }
+li{list-style:none;}
+img{vertical-align:top;border:none}
+body{
+	background: url(../img/炉石/E.jpg) no-repeat;
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+header{
+	background: #2c0903;
+	position: relative;	
+	box-shadow: 0px 0px 3px 0px #61350a;
+}
+header .desktop{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+
+	
+}
+header .desktop .left{
+	/*overflow: hidden;*/
+	width: 500px;
+}
+header .desktop .left li{
+	float: left;
+}
+header .desktop li a{
+    text-decoration: none;
+    color: rgba(255,255,255,.7);
+    line-height: 40px;
+    margin-right: 30px;
+    font-size: 15px;
+}
+header .desktop li a:hover{
+	color:#fff;
+	text-shadow: 0 0 15px #fff,0 0 30px rgba(255,255,255,.3);
+}
+header .desktop .left li .destlogo{
+	background: url(../img/炉石/iocF.png) no-repeat;
+	background-position: -18px -75px; 
+	display: inline-block;
+	width: 62px;
+	height: 40px;
+}
+header .desktop .left li:last-of-type a{
+	margin-right: 0px;
+}
+header .desktop .left li .destlogo:hover{
+	background: url(../img/炉石/iocF.png);
+	background-position: -18px -119px;
+}
+header .desktop li:nth-of-type(2)>a:after ,
+header .desktop li:nth-of-type(5)>a:after{
+	content: '';
+	width: 14px;
+	height: 7px;
+	background: url(../img/炉石/iocF.png);
+	background-position: -147px -131px;
+	display: inline-block;
+	margin-left: 5px;
+}
+header .desktop .right{
+	float: right;
+}
+header .desktop .right li{
+	float: left;
+}
+header .desktop .left .inside{
+	position: absolute;
+	width: 100%;
+	top: 40px;
+	left: 0px;
+	background: rgba(21,26,35,.95);
+	border: solid 1px rgba(255,255,255,.15);
+	box-sizing: border-box;
+	text-align: center;
+	padding:30px 0;
+}
+header .desktop .left li .inside a:after{
+	content: none;
+}
+header .desktop .left .inside a{
+	width: 170px;
+	height: 170px;
+	background-size: cover;
+	background-position: center;
+	display: inline-block;
+	/*background-image: url(../img/炉石/Fcard-overwatch-CN-85c98611cefd3018.jpg);*/
+}
+/*header .desktop .left .inside a{
+	background: red;
+}*/
+header .desktop .left .inside a:nth-of-type(1){
+	background-image: url(../img/炉石/Fcard-overwatch-CN-85c98611cefd3018.jpg);
+}
+header .desktop .left .inside a:nth-of-type(2) {
+	background-image: url(../img/炉石/Fcard-hearthstone-CN-538b49564ab2122a.jpg);
+}
+header .desktop .left .inside a:nth-of-type(3){
+	background-image: url(../img/炉石/Fcard-world-of-warcraft-CN-c4bebe45e5af0993.jpg);
+}
+header .desktop .left .inside a:nth-of-type(4){
+	background-image: url(../img/炉石/Fcard-world-of-warcraft-CN-c4bebe45e5af0993.jpg);
+}
+header .desktop .left .inside a:nth-of-type(5){
+	background-image: url(../img/炉石/Fcard-diablo-3-CN-0d57444efa52a79b.jpg);
+}
+header .desktop .left .inside a:nth-of-type(6){
+	background-image: url(../img/炉石/Fcard-heroes-of-the-storm-CN-bacafbbddcf92348.jpg);
+    margin: 0;
+}
+
+header .desktop .left li:hover a:after{
+	background-position-y: -145px;
+}
+header .desktop .left .inside{
+	visibility: hidden;
+	opacity: 0;
+/*	background: yellow;*/
+}
+header .desktop .left li:hover a+.inside{
+	opacity: 1;
+	visibility: visible;
+	transition: all .3s;
+}
+header .desktop .left .inside a{
+	position: relative;
+	top: -30px;
+	transition: all .3s;
+	opacity: 0;
+}
+header .desktop .left li:hover a+.inside a{
+	top:0px;
+	opacity: 1;
+}
+header .desktop .left .inside a:first-of-type{
+	transition-delay: 50ms;
+}
+header .desktop .left .inside a:nth-of-type(2){
+	transition-delay: 100ms;
+}
+header .desktop .left .inside a:nth-of-type(3){
+	transition-delay: 150ms;
+}
+header .desktop .left .inside a:nth-of-type(4){
+	transition-delay: 200ms;
+}
+header .desktop .left .inside a:nth-of-type(5){
+	transition-delay: 250ms;
+}
+header .desktop .left .inside a:nth-of-type(6){
+	transition-delay: 300ms;
+}
+header .desktop .left .subnav ul{
+	width: 1000px;
+	margin: 0 auto;
+	height: 300px;
+}
+
+header .desktop .left .subnav{
+	position: absolute;
+	left: 0;
+	top: 40px;
+	background: #283244;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+header .desktop .left li:nth-of-type(5):hover .subnav{
+	opacity: 1;
+	visibility: visible;
+}
+
+header .desktop .left .subnav {
+	opacity: 0;
+	visibility: hidden;
+}
+header .desktop .left .subnav .fl{
+	float: left;
+}
+header .desktop .left .subnav .fr{
+	float: right;
+	width: 0px;
+	height: 300px;
+	background: rgba(21,26,35,1);
+	opacity: 0;
+	visibility: hidden;
+	transition: all .5s;
+}
+header .desktop .left .subnav a{
+	display: block;
+	vertical-align: middle;
+	float: left;
+	overflow: hidden;
+	/*top: -30px;*/
+	transition: all .5s;
+/*	width: 192px;*/
+}
+header .desktop .left .subnav span {
+	width: 192px;
+	
+}
+header .desktop .left .subnav .fr img{
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+}
+header .desktop .left .subnav a:hover .fr{
+	opacity: 1;
+	visibility: visible;
+	width: 100px;
+}
+
+
+
+.two{
+	overflow: hidden;
+	height: 275px;
+	/*background: none;*/
+	width: 1000px;
+	margin: 0 auto;
+}
+.two .twologo{
+	float: left;
+	background: url(../img/炉石/LO.png) no-repeat;
+	width: 350px;
+	height: 184px;
+	margin: 30px 0;
+	z-index: 9000;
+	left: 10px;
+}
+.two .twologo a{
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	display: block;
+	color: #db6800;
+}

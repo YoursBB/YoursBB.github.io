@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="" class="buzz">buzz 666</a>
+		<style type="text/css">
+			.buzz {
+				background:lightpink;
+				padding: 15px 10px;
+				display: inline-block;
+				transform-origin: center 500% 0;
+				-webkit-transform-origin: center 500% 0;
+			}
+			.buzz:hover {
+				animation: buzz 1s ease-in-out infinite;
+				-webkit-animation: buzz 1s ease-in-out infinite;
+				
+			}
+			@keyframes buzz{
+				0% {transform: rotate(0deg);}
+				16% {transform: rotate(-1deg);}
+				32% {transform: rotate(0.8deg);}
+				50% {transform: rotate(-0.6deg);}
+				66% {transform: rotate(0.4deg);}
+				74% {transform: rotate(-0.2deg);}
+				100% {transform: rotate(0deg);}
+				
+			}
+		@-webkit-keyframes buzz{
+				0% {transform: rotate(0deg);}
+				16% {transform: rotate(-1deg);}
+				32% {transform: rotate(0.8deg);}
+				50% {transform: rotate(-0.6deg);}
+				66% {transform: rotate(0.4deg);}
+				74% {transform: rotate(-0.2deg);}
+				100% {transform: rotate(0deg);}
+				
+			}
+						
+		</style>
+	</body>
+</html>

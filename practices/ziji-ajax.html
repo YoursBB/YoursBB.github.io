@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <!-- Bootstrap -->
+  <link href="../响应式文件/css/bootstrap.min.css" rel="stylesheet">
+  <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+  <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+  <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+        <style>
+                .container {
+                  background: lightblue;
+                }
+              </style>
+            
+              <div class="container">
+                <input id="pai" type="text" value="">
+                <div class="demo">
+                </div>
+                <button type="button" class="btn btn-danger center-block" onclick="getdianying()">（危险）Danger</button>
+              </div>
+              <script>
+              function getdianying(){
+                var value = $("#pai").val();
+                console.log(value);
+                  $.get("https://api.shenjian.io/?appid=08cb2be637889ff4f756f45fe7ca89f3",{
+                    Irank: value,
+                  },
+                        function (data,textStatus, jqXHR) {
+                          console.log(data)                        
+                          var arr = data.data; 
+                          $.each(arr,function(indexInArray,valueOfElement){
+                            var i=valueOfElement.Irank;
+                            var m=valueOfElement.MovieName;
+                            var d=valueOfElement.movieDay;
+                            var t=valueOfElement.time;
+                            $('.demo').append("排名：" + i + ",电影名：" + m + "，放映天数:" + d + ",时间:" + t)                         
+                          });
+                         
+                  },
+                  'jsonp'              
+                  );
+              }
+              </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="../jquery文件/jquery.js"></script>
+</head>
+<body>
+    <div class="smallbox">
+        <span class="mask"></span>
+        <span class="float"></span>
+        <img src="./img/1.jpg">
+    </div>
+    <div class="bigbox">
+        <img src="./img/1.jpg" alt="">
+    </div>
+    <script>
+        $(".mask").mouseover(function() {
+    $(".float").show()
+    $(".bigbox").show()
+})
+$(".mask").mouseout(function() {
+    $(".float").hide()
+    $(".bigbox").hide()
+})
+
+    $('.mask').mousemove(function(ev){
+    var left =ev.pageX-$('.smallbox').offset().left-($('.float').width()/2)
+    var top =ev.pageY-$('.smallbox').offset().left-($('.float').height()/2)
+if (left<0){
+    left=1
+}
+if (left>$(this).width()-$('.float').width()){
+    left=$(this).width()-$('.float').width();
+}
+if (top<0){
+    top=1
+}
+if (top>$(this).height()-$('.float').height()){
+    top=$(this).height()-$('.float').height();
+}
+
+    $(".float").css({
+        "left": left,
+        "top": top
+    })
+   
+    var pX = left / ($(".mask").width() - $(".float").width())
+    var pY = top / ($(".mask").height() - $(".float").height())
+    $('.bigbox img').css({
+        "left": -pX * ($(".bigbox img").width() - $(".bigbox").width()),
+        "top": -pY * ($(".bigbox img").height() - $(".bigbox").height())
+    })
+     })
+    </script>
+</body>
+</html>

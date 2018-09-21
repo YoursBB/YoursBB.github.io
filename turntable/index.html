@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<style type="text/css">
+			#turntable {
+				width: 650px;
+				height: 600px;
+				margin: 0 auto;
+				position: relative;
+				padding: 0;
+				background: url(img/turntable-bg.jpg) no-repeat;
+			}
+			
+			#turntable #pointer {
+				width: 174px;
+				height: 228px;
+				top: 150px;
+				left: 255px;
+				position: absolute;
+			}
+			
+			#turntable #turn {
+				width: 450px;
+				height: 450px;
+				top: 60px;
+				left: 120px;
+				position: absolute;
+			}
+		</style>
+		<div id="turntable">
+			<div id="turn"><img src="img/turntable.png"></div>
+			<div id="pointer"><img src="img/pointer.png"></div>
+		</div>
+		<script>
+			var turn = document.getElementById('turn');
+			var pointer = document.getElementById('pointer');
+			var lottery = function() {
+				var randomNumber = Math.floor(Math.random() * 100);
+				if(randomNumber < 1) {
+					return {
+						code: 1,
+						text: "一等奖"
+					};
+				} else if(randomNumber < 5) {
+					return {
+						code: 2,
+						text: "二等奖"
+					};
+				} else if(randomNumber < 13) {
+					return {
+						code: 3,
+						text: "三等奖"
+					};
+				} else if(randomNumber < 21) {
+					return {
+						code: 4,
+						text: "四等奖"
+					};
+				} else if(randomNumber < 35) {
+					return {
+						code: 5,
+						text: "五等奖"
+					};
+				} else if(randomNumber < 50) {
+					return {
+						code: 6,
+						text: "六等奖"
+					};
+				} else {
+					return {
+						code: 7,
+						text: "xxxxxxxxxxxxxxxxxxx"
+					};
+				}
+			};
+			var rotate = function() {
+				turn.style.transition = 'all 3s';
+				var x = lottery();
+				console.log(x);
+				var currentAngle = 30 + (360 / 7) * (x.code - 1);
+				turn.style.transform = 'rotate(' + (currentAngle + 360 * 3) + 'deg)';
+
+				setTimeout(function() {
+					turn.style.transition = 'all 0s';
+					turn.style.transform = 'rotate(' + currentAngle + 'deg)';
+					alert(x.text);
+					canClick = true;
+				}, 3000);
+			}
+			var canClick = true;
+			pointer.onclick = function() {
+				if(canClick === true) {
+					rotate();
+				}
+				canClick = false;
+			}
+		</script>
+	</body>
+
+</html>

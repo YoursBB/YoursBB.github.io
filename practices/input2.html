@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input name="11" id="in1" value=""  type="text"/>
+		<input name="22" id="in2" value="提交"  type="submit"/>
+		<script>
+			var in1=document.getElementById('in1');
+			var x=in1.value;
+			var in2=document.getElementById('in2');
+			in2.onclick=function(){
+				if(x == null || x == ""){
+					alert('jjj');					
+				}else{
+					alert('555')
+				}
+			}
+		</script>
+	</body>
+</html>

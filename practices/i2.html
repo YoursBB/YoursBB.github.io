@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		div {
+			display: block;
+		}
+		
+		.bigbox {
+			position: relative;
+			width: 230px;
+			height: 230px;
+			box-sizing: border-box;
+		}
+		
+		.tu {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			box-shadow: inset 0 0 0 16px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0);
+			border-radius: 50%;
+		}
+		
+		.kuan {
+			box-sizing: border-box;
+			transition: all .35s;
+		}
+		
+		.kuan img {
+			vertical-align: middle;
+			border: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+		}
+		
+		a:hover .kuan {
+			transform: rotate(-90deg);
+			-webkit-transform: rotate(-90deg);
+		}
+		
+		.zi {
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: -240px;
+			bottom: 0;
+			transition: all .35s;
+		}
+		
+		.zi .zikuan {
+			width: 230px;
+			height: 230px;
+			border-radius: 50%;
+			background: rgba(0, 0, 0, 0.6);
+			text-align: center;
+		}
+		
+		a:hover .zi {
+			left: 0;
+			opacity: 1;
+		}
+		
+		.zi h3 {
+			color: #fff;
+			text-transform: uppercase;
+			position: relative;
+			letter-spacing: 2px;
+			font-size: 22px;
+			margin: 0 30px;
+			padding: 55px 0 0 0;
+			height: 110px;
+			text-shadow: 0 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.3);
+		}
+		
+		.zi p {
+			color: #bbb;
+			padding: 10px 5px;
+			font-style: italic;
+			margin: -30px 30px;
+			font-size: 12px;
+			border-top: 1px solid rgba(255, 255, 255, 0.5);
+		}
+	</style>
+
+	<body>
+		<div class="bigbox">
+			<a class="box">
+				<div class="kuan">
+					<div class="tu"></div>
+					<img src="img/2.jpg" />
+				</div>
+
+				<div class="zi">
+					<div class="zikuan">
+						<h3>Heading here</h3>
+						<p>Description goes here</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</body>
+
+</html>
