@@ -1,7 +1,7 @@
 #项目
 
 <hr>
-【飞机大战】http://YoursBB.github.io/aircraftBattle/index.html
+【飞机大战 <a src='http://YoursBB.github.io/aircraftBattle/index.html'>  】http://YoursBB.github.io/aircraftBattle/index.html
 
 
 【炉石传说】http://YoursBB.github.io/lushi/index.html
