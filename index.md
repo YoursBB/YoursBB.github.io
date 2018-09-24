@@ -35,9 +35,9 @@
 
 【复选框】http://YoursBB.github.io/practices/CheckBox.html
 
-【svg 动画】http://YoursBB.github.io/practices/CheckBox.html
+【svg 动画】http://YoursBB.github.io/practices/svg-1.html
 
-【图片 字体 svg 图标】http://YoursBB.github.io/practices/svg-1.html
+【图片 字体 svg 图标】http://YoursBB.github.io/practices/icon.html
 
 【i 按钮】http://YoursBB.github.io/practices/i.html
 
