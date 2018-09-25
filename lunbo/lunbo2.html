@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="../jqueryfile/jquery.js"></script>
+
+    <title>Document</title>
+
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .bigbox {
+        width: 800px;
+        height: 400px;
+        /* background: red; */
+        margin: auto;
+    }
+
+    .bigbox .topbox {
+        width: 100%;
+        height: 500px;
+        background: royalblue;
+        position: relative;
+    }
+
+    .bigbox .topbox img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        /* display: none; */
+        opacity: 0;
+        transition: all .3s;
+    }
+
+    .bigbox .topbox img:first-of-type {
+        opacity: 1;
+    }
+
+    .bigbox .topbox img.svg {
+        opacity: 1;
+    }
+
+    .bigbox .bottombox {
+        position: absolute;
+        text-align: center;
+        list-style: none;
+        margin-left: 25%;
+        bottom: 0;
+    }
+
+    .bigbox .bottombox li {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.2);
+        margin: 20px;
+        /* transition: all 2s; */
+    }
+
+    .bigbox .bottombox li.css {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .bigbox .turn {
+        width: 100%;
+        position: absolute;
+        margin-top: 25%;
+    }
+
+    .bigbox .turn span {
+        line-height: 30px;
+        text-align: center;
+        display: inline-block;
+        background: lightcoral;
+        width: 50px;
+        height: 30px;
+    }
+
+    .bigbox .turn span:first-of-type {
+        float: left;
+    }
+
+    .bigbox .turn span:last-of-type {
+        float: right;
+    }
+</style>
+
+<body>
+    <div class="bigbox">
+        <div class="topbox">
+            <img src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+
+            <div class="turn">
+                <span id="prev">左</span>
+                <span id="next">右</span>
+            </div>
+
+            <ul class="bottombox">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <script>
+        
+        $(document).ready(function () {
+            var $mine = $(".bigbox .bottombox li");
+            $('.bigbox .bottombox li:first-of-type').addClass('css').show;
+            $mine.click(function () {
+                $(this).addClass("css").siblings().removeClass("css");
+                var index = $(this).index();
+                i=index;
+                // $(".bigbox .topbox img").eq(index).show().siblings().hide();
+                $(".bigbox .topbox img").eq(index).addClass("svg").siblings().removeClass("svg");
+            })
+        });
+        var i = 0;
+        var playright = function () {  
+            i++;
+            i = i > 3 ? 0 : i;
+            $(".bigbox .bottombox li").eq(i).addClass('css').siblings().removeClass("css");
+            $(".bigbox .topbox img").eq(i).addClass("svg").siblings().removeClass("svg");
+        }
+        var playleft = function () {
+            i--;
+            i = i < 0 ? 3 : i;
+            $(".bigbox .bottombox li").eq(i).addClass('css').siblings().removeClass("css");
+            $(".bigbox .topbox img").eq(i).addClass("svg").siblings().removeClass("svg");
+        }
+        $("#next").click(function () {
+            playright();
+        })
+        $("#prev").click(function () {
+            playleft();
+        })
+   
+    </script>
+
+
+</body>
+<!--  -->
+
+</html>

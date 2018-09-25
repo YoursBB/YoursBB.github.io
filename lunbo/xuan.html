@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+.tabcontent:first-of-type{
+	display: block;
+}
+#an button:first-of-type{
+	background: red;
+}
+	</style>
+
+	<body>
+		<div id="big">
+		<div style="background:red" class="tabcontent">
+			<h3>London</h3>
+			<p>London is the capital city of England.</p>
+		</div>
+
+		<div style="background:green" class="tabcontent">
+			<h3>Paris</h3>
+			<p>Paris is the capital of France.</p>
+		</div>
+
+		<div style="background:blue" class="tabcontent">
+			<h3>Tokyo</h3>
+			<p>Tokyo is the capital of Japan.</p>
+		</div>
+
+		<div style="background:orange" class="tabcontent">
+			<h3>Oslo</h3>
+			<p>Oslo is the capital of Norway.</p>
+		</div>
+		</div>
+		<div id="an">
+<button class="tablink">London</button>
+<button class="tablink">Paris</button>
+<button class="tablink">Tokyo</button>
+<button class="tablink">Oslo</button>
+		</div>
+		<script>
+        var tabcontent=document.querySelectorAll("#big .tabcontent");
+		var tablink=document.querySelectorAll('#an .tablink')	;
+			for (var a=0;a<tablink.length;a++) {
+				tablink[a].index=a;
+			}
+			
+			for ( var i=0 ;i<tablink.length;i++) {
+				tablink[i].onclick=function(){
+					for (b=0 ;b<tablink.length;b++) {
+						tablink[b].style.background="gray";
+					}
+					this.style.background=tabcontent[this.index].style.background;
+					for (a=0;a<tablink.length;a++) {
+						tabcontent[a].style.display='none';
+					}
+					tabcontent[this.index].style.display='block';
+				}
+			}			
+		</script>
+	</body>
+
+</html>

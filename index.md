@@ -21,6 +21,12 @@
 
 【转盘】http://YoursBB.github.io/turntable/index.html
 
+【轮播图1】http://YoursBB.github.io/lunbo/lunbo1.html
+
+【轮播图2】http://YoursBB.github.io/lunbo/lunbo2.html
+
+【选项卡】http://YoursBB.github.io/lunbo/xuan.html
+
 【按钮1】http://YoursBB.github.io/practices/an1.html
 
 【按钮2】http://YoursBB.github.io/practices/an2.html

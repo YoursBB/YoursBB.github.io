@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<script src="../jqueryfile/jquery.js" type="text/javascript" charset="utf-8"></script>
+
+<body>
+
+	<style>
+		body {
+			margin: 0;
+		}
+
+		.bigbox {
+			width: 400px;
+			height: 300px;
+			background: red;
+			margin: 0 auto;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.smallbox {
+			width: 1600px;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		.smallbox li {
+			width: 400px;
+			height: 300px;
+			float: left;
+		}
+		.smallbox li img{
+			width: 100%;
+			height: 100%;
+		}
+
+
+		.item {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			margin: auto;
+			height: 36px;
+		}
+
+		.item span {
+			background: orchid;
+			line-height: 36px;
+			display: inline-block;
+		}
+
+		.item span.prev {
+			float: left;
+		}
+
+		.item span.next {
+			float: right;
+		}
+
+		.carousel-pagination {
+			text-align: center;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+
+		.carousel-pagination i {
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			background: green;
+			margin: 0 5px;
+			border-radius: 50%;
+		}
+
+		.carousel-pagination i.active {
+			background: pink;
+		}
+	</style>
+	<div class="bigbox">
+		<div class="smallbox">
+			<li class="a"><img src="img/1.jpg" ></li>
+			<li class="b"><img src="img/2.jpg" ></li>
+			<li class="c"><img src="img/3.jpg" ></li>
+			<li class="d"><img src="img/4.jpg" ></li>
+		</div>
+
+		<div class="item">
+			<span class="prev">prev</span>
+			<span class="next">next</span>
+		</div>
+		<div class="carousel-pagination"></div>
+	</div>
+	<script>
+		// $(document).ready(function(){
+		// $('.item span.next').click(function(){
+		// 	  $('.smallbox').animate({marginLeft:"-400px"},function(){
+		// 		  $('.smallbox li').eq(0).appendTo($('.smallbox'));
+		// 		  $('.smallbox').css('marginLeft','0px');
+		// 	  });
+		// })
+		// $('.item span.prev').click(function(){
+		// 	  $('.smallbox').css('marginLeft','-400px')
+		// 		  $('.smallbox li').eq(3).prependTo($('.smallbox'));
+		// 		  $('.smallbox').animate({marginLeft:'0px'});
+		// 	  });
+		// })
+
+		$('.bigbox .smallbox li').each(function () {
+			$('.carousel-pagination').append('<i></i>');
+		});
+		$('.carousel-pagination i').first().addClass('active');
+		var old = $('.bigbox .smallbox li');
+		$('.carousel-pagination i').click(function () {
+			$(this).addClass('active').siblings().removeClass('active');
+			if ($(this).index() > old.index($('.bigbox .smallbox li:eq(0)'))) {
+				old.eq($(this).index()).insertAfter('.bigbox .smallbox li:eq(0)');
+				$('.bigbox .smallbox').animate({
+					'marginLeft': "-400px"
+				}, 1000, function () {
+					$('.bigbox .smallbox').css('marginLeft', '0').find('li').eq(0).appendTo('.bigbox .smallbox');
+				})
+			} else if ($(this).index() < old.index($('.bigbox .smallbox li:eq(0)'))) {
+				old.eq($(this).index()).insertBefore('.bigbox .smallbox li:eq(0)');
+				$('.bigbox .smallbox').css({
+					'margin-left': '-400px'
+				}).animate({
+					'margin-left': '0'
+				}, 1000)
+			}
+		});
+
+		
+    $('.next').click(function(){
+		var nextIndex = old.index($('.bigbox .smallbox li:eq(0)')) + 1;
+            if (nextIndex >= old.length) {
+                nextIndex = 0;
+            }
+            $('.carousel-pagination i').eq(nextIndex).addClass('active').siblings().removeClass('active');
+
+            old.eq(nextIndex).insertAfter('.bigbox .smallbox li:eq(0)');
+			$('.bigbox .smallbox').animate({
+					'marginLeft': "-400px"
+				}, 1000, function () {
+					$('.bigbox .smallbox').css('marginLeft', '0').find('li').eq(0).appendTo('.bigbox .smallbox');
+				})
+	})
+	$('.prev').click(function () {
+            var prevIndex = old.index($('.bigbox .smallbox li:eq(0)')) - 1;
+            if (prevIndex < 0) {
+                prevIndex = old.length - 1;
+            }
+            $('.carousel-pagination i').eq(prevIndex).addClass('active').siblings().removeClass('active');
+            old.eq(prevIndex).insertBefore('.bigbox .smallbox li:eq(0)');
+			$('.bigbox .smallbox').css({
+                'margin-left': '-400px'
+            }).animate({
+                'margin-left': '0'
+            }, 1000)
+        })
+	</script>
+
+</body>
+
+</html>
