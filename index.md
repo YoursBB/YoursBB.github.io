@@ -12,7 +12,7 @@
 
 <hr>
 
-#作业
+#小项目
 <hr>
 
 【放大镜】http://YoursBB.github.io/magnifyingglass/index.html
