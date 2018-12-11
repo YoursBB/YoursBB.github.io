@@ -1,6 +1,7 @@
 #大项目
 
 <hr>
+【vue+element框架  仿糗事百科APP手机版】 https://yoursbb.github.io/qiushi/dist/index.html/
 【飞机大战】http://YoursBB.github.io/aircraftBattle/index.html
 
 
