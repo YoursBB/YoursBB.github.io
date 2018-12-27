@@ -5,6 +5,7 @@
 
 【飞机大战】http://YoursBB.github.io/aircraftBattle/index.html
 
+【需服务器和数据库 小型个人博客】http://YoursBB.github.io/boke/index.html
 
 【炉石传说】http://YoursBB.github.io/lushi/index.html
 
